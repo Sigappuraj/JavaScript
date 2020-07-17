@@ -1,0 +1,158 @@
+Array is exclusively numerically indexed, cannot have string indexes. when you set a string index, you are setting property of the object. those properties are not part of the data storage of array.
+
+Properties:
+	array.length - returns the number of elements in that array.
+	
+Methods:
+Array.from() - static methods to creates new shallow copied array.
+	let inArr = [1, 2, 3];
+	console.log(Array.from(inArr, x => x * x));
+	
+Array.isArray() - method determines provided value is array or not, returns boolean value
+	let inArr = [1, 2, 3];
+	console.log(Array.isArray(inArr));
+	
+Array.of() - method creates new array instance from variable of number of arguments
+	Array.of(7) -> o/p [7]
+	Array.of(1,2,3) -> o/p [1,2,3]
+	
+	Array(7) -> o/p creates array of empty 7 elements.
+	
+concat() - method is used to merge two or more arrays. does not change the existing array, creates new array.
+	const arr3 = arr1.concat(arr2);
+	
+copyWithin() - methods copies part of array to another location in same array without modifying the length.
+	const array1 = ['a', 'b', 'c', 'd', 'e'];
+	console.log(array1.copyWithin(0, 2, 4)); // o/p ["c", "d", "c", "d", "e"]
+	
+entries() - method returns new iterator array that contains key/value pair of each index in the array.
+	let inArr = [1, 2, 3];
+	let iterator = inArr.entries();
+	console.log(iterator.next().value);//[0, 1]
+	
+every() - method test whether all the elements in array pass the test implemented by provided function. its return boolean value.
+	const everytest = (currentvalue) => currentvalue < 10;
+	let inArr = [1, 12, 3];
+	console.log(inArr.every(everytest));
+	
+fill() - method changes the array element to static value from start index to end index, returns the changed array.
+	let inArr = [1, 2, 3,4,5];
+	console.log(inArr.fill(0,2,4))//[1,2,0,0,5]
+	
+filter() - method create new array with all the element that pass the implemented a provided function.
+	let inArr = [1, 2, 3, 4, 5];
+	let res = inArr.filter(currentvalue => currentvalue < 4);
+	console.log(res);//[1,2,3]
+	
+find() - method return the value of first element in the array that satisfies the provided testing function.
+	let inArr = [1, 20, 23, 4, 5];
+	let res = inArr.find(currentvalue => currentvalue > 14);
+	console.log(res);//20
+	
+findIndex() - method returns the index of value in the array that satisfies the testing function, otherwise return -1
+	let inArr = [1, 20, 23, 4, 5];
+	let res = inArr.findIndex(currentvalue => currentvalue > 14);
+	console.log(res);//1
+	
+flat() - method creates new array with all the sub array elements concatenated into it
+	let inArr = [1, 20, [23, 4, 5]];
+	//console.log(inArr.flat()) or
+	console.log(inArr.reduce((acc, val) => acc.concat(val), []));//[1, 20, 23, 4, 5]
+	
+flatMap() - method map the each element in array using mapping function, then flattens the result into new array.
+	let inArr = [1, 20, 23, 4, 5];
+	//console.log(inArr.flatMap(x => [x, x * 2])); or
+	console.log(inArr.reduce((acc, val) => acc.concat([val, val * 2]), []));
+	
+forEach() - method executes the provided function once for each array element
+	let inArr = [1, 20, 23, 4, 5];
+	inArr.forEach(val => console.log(val * 2));
+	
+includes() - method is used to find the given value exist in array or not, return the boolean value
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.includes(23));
+	
+indexOf() - used to find the first index of given element in array, return -1 if not found
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.indexOf(23));
+	
+join() - method creates and return a string by concatenating all the elements in array.
+	let inArr = ['one', 'two', 'three'];
+	console.log(inArr.join('-'));
+
+keys() - method return the keys for each index in the array.
+	let inArr = ['one', 'two', 'three'];
+	for (const key of inArr.keys()) {
+		console.log(key);
+	}
+	
+lastIndexOf() - method returns the last index of given element in the array, if not found return -1
+	let inArr = ['one', 'two', 'three', 'two'];
+	console.log(inArr.lastIndexOf('two'));
+
+map() - method return new array, the results of calling a provided function on every element in the array
+	let inArr = [1, 20, 23, 4, 5];
+	const res = inArr.map(x => x * 2);
+	console.log(res);
+	
+pop() - method removes the last element of the array & change the length of array.
+	inArr.pop()
+	
+push() - add the element at the end of the array.
+	inArr.push()
+	
+reduce() - method executes the reducer function for every element in the array, returns the single value
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.reduce((acc, val) => acc + val));
+	
+reverse() - method reverse the array
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.reverse());
+	
+shift() - method removes the first element from array, return the removed element.
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.shift());
+	
+slice() - method return the shallow copy of portion in the array into new array.
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.slice(1, 4));
+	
+sort() - method sorts the element of array
+	let inArr = [1, 20, 23, 4, 5];
+	console.log(inArr.sort());
+	
+splice() - method used to add/remove/replacing the element in the array.
+	const months = ['Jan', 'March', 'April', 'June', 'july'];
+	months.splice(1, 2, 'Feb');
+	console.log(months);//['Jan', 'Feb', 'June', 'july']
+	
+unshift() - method add one or more element at the begining of the array.
+	const months = ['Jan', 'March', 'April', 'June', 'july'];
+	months.unshift('feb', 'may');
+	console.log(months);
+	
+JSON:
+	JSON object contains methods for parsing Javascript Object Notation and converting values into JSON.
+	
+Methods:
+
+JSON.parse() - method parses the JSON string, constructing the javascript objects described by the string.
+	const json = '{ "result": true, "count": 42 }';
+	const obj = JSON.parse(json);
+	console.log(obj.count);//42
+	
+JSON.stringify() - method convert the javascript object to JSON string.
+	console.log(JSON.stringify({ x: 5, y: 6 }));//{"x":5,"y":6}
+	
+Hoisting:
+Javascript only hoist declarations, not initializations. If a variable is declared and initialized after using it, the value will be undefined.
+	console.log(num); // Returns undefined
+	var num; // declaration
+	num = 6; // initialization
+	
+Comparision:
+	2 == ‘2’ //true //checks only for value
+	2 === ‘2’ //false // checks for the datatype also
+	Comparing objects
+		You can’t compare objects
+		Stringfy and compare //JSON.stringify used to compare object. its convert object to string and compare

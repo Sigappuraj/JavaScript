@@ -1,0 +1,15 @@
+Function definition consits of function keyword followed by
+	function name
+	list of parameters, enclosed in parentheses and separated by commas
+	statements that define the function, enclosed in curly brackets{}
+	
+	if the function changes the value of parameters, this change is not reflected globally.
+	if you pass on object as parameter and function changes the object properties, the change is visible outside the function
+	
+Anonymous function:
+
+	const factorial = function fac(n) { return n < 2 ? 1 : n * fac(n - 1) }
+	console.log(factorial(3))
+	
+Function scope:
+	variable defined inside the function cannot be accessed from anywhere outside the function.

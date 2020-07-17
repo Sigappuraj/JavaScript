@@ -1,0 +1,35 @@
+Javascript is programming language that adds interactivity to website. this happens in games in the behaviour of responses when buttons are pressed or data entry on forms.
+Javascript is case sensitive.
+
+
+linking the javascript from html file
+	<script src="script.js"></script>
+
+Variables:
+	variables are containers that store values.
+	var - function scoped, allows redeclare the variables.
+	let - block scoped, if you redeclare the variables with let keyword, you will get an error.
+	const - cant be reassigned(immutables).
+	
+Data types:
+	primitive - numbers, boolean, strings, bigInt
+	Trivial - null, undefined
+	composite - objects(array, functions, key/values)
+	
+	typeof function is used to identify the type of data.
+	
+copy by value:
+	all function arguments are passed by value. it means copies values of the variables that you pass to function into local variables. any changes on function local variable inside the function its not affect the argument you passed.
+
+copy by reference:
+	function arguments passed by reference, the changes of varibales that you pass to function will reflected on outside the function.
+	
+forEach() - method executes a provided function once for each array element. it is not invoked for index properties. there is no way to stop or break forEach() loop other than throwing an exception.
+
+for/in - loops through properties of an object that are keyed by strings.
+	const object = { a: 1, b: 2, c: 3 };
+
+	for (const property in object) {
+	  console.log(`${property}: ${object[property]}`);
+	}
+	

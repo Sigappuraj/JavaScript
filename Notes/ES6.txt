@@ -1,0 +1,19 @@
+https://github.com/tc39
+https://babeljs.io/ - used to compare the old version of browser code
+
+https://developer.mozilla.org/en-US/docs/Web/API
+
+Javascript gets lots of new features every year
+But the browser vendors take time to implement these features
+
+https://jsonplaceholder.typicode.com/
+
+
+Class -> group of Properties & Methods
+Properties -> variables
+Methods -> functions
+All properties & Methods are always public
+We use _ to let other developers know they are private variables & not use them
+Since javascript doesn’t support private variables
+
+You can use setters & getters for data validation of your class properties
